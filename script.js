@@ -85,12 +85,12 @@ map: map
 //Para ver si lo estoy viendo
 // Obtener todos los elementos con la clase contenedor5
 var contenedoresx = new Map();
-contenedoresx.set('.animar1', 'animacion1');
-contenedoresx.set('.animar2', 'animacion2');
-contenedoresx.set('.animar3', 'animacion3');
-contenedoresx.set('.animar4', 'animacion4');
-contenedoresx.set('.animar5', 'animacion5');
-contenedoresx.set('.animar6', 'animacion6');
+contenedoresx.set('.animar11', 'animacion1');
+contenedoresx.set('.animar21', 'animacion2');
+contenedoresx.set('.animar31', 'animacion3');
+contenedoresx.set('.animar41', 'animacion4');
+contenedoresx.set('.animar51', 'animacion5');
+contenedoresx.set('.animar61', 'animacion6');
 
 
 
