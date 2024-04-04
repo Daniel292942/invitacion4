@@ -40,17 +40,24 @@ body{
 }
 
 
-.principal, .invitacion, .padrinos-padres, .contador-galeria, .iglesia, .salon, .confirmacion{
+.principal, .invitacion, .padrinos-padres, .contador-galeria, .iglesia, .salon, .confirmacion, .boletos{
     width: 400px;
-    height: 600px;  
+    height: 700px;  
     background: var(--color--fuerte--oscuro);
     position: relative;
     color: var(--color--fuerte--claro);
     overflow: hidden;
    
 }
+.sobre{
+    height: 600px;
+    
+}
+
 .principal{
     background-color: var(--color--fondo);
+    
+
 }
 .invitacion .contenido1{
     color: var(--color--fuerte--claro);;
@@ -78,7 +85,7 @@ body{
     background-color: var(--color--fuerte--oscuro);
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 55%;
 }
 .salon .franja{
     background-color: var(--color--fuerte--claro);
@@ -134,7 +141,7 @@ h1::first-letter,h2::first-letter,h3::first-letter,p::first-letter{
 .sobre{
     position: relative;
     width: 350px;
-    height: 95%;
+    height: 81.15%;
     background-color: var(--color--claro);
     border-radius: 0 10px 10px 0;
    
@@ -355,6 +362,7 @@ li{
     justify-content: space-evenly;
    
 }
+
 .countdown div{
     display: grid;
     place-items: center;
@@ -398,7 +406,7 @@ li{
     place-items: center;
     font-family: 'Share Tech Mono', monospace;
     width: 98%;
-    height: 340px;
+    height: 270px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -948,6 +956,13 @@ input:not(:checked) + .slide::after {
         margin-top:  10px;
         font-size: 1.3rem;
     }
+    .boletos{
+        width: 100%;
+    }
+    .final-sms{
+        margin-top: 50px;
+        height: 440px;
+    }
 }
 
 
@@ -1002,6 +1017,7 @@ option {
     
 }
 .btn-switch1{
+    margin:25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1013,24 +1029,21 @@ option {
     margin-bottom: 10px;
 }
 .boletos{
-    height: 900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    background-color: var(--color--claro);
+   overflow: hidden;
+   
     
 }
 .boleto{
-    
-    transform: rotate(90deg);
-    width: 900px;
-    height: 250px;
+    position: relative;
+    width: 950px;
+    height: 300px;
     background-image: url(src/img/boleto.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     border: solid white;
  
-    
 }
 .contenido-qr{
     width: 235px;
@@ -1040,10 +1053,48 @@ option {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+    
     
 }
 
 .txt-boleto-sup, .txt-boleto-inf{
     color: var(--color--fuerte--oscuro);
     font-size: 15px;
+}
+
+
+
+.map{
+    margin-top: 50px;
+}
+.container-boleto{
+ 
+    background-color: var(--color--fuerte--claro);
+   display: flex;
+   align-items: center;
+    width: 950px;
+    height: 310px;
+    border-radius: 20px;
+    transform: scale(0.4);
+    border: solid 5px var(--color--fuerte--oscuro);
+}   
+.margen-boleto{
+   
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.boletos .contbtn .btn-neon{
+    color: var(--color--fuerte--claro);
+}
+.boletos{
+    display: none;
+}
+
+.agradecimiento{
+    margin-top: 20px;
 }
