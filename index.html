@@ -29,15 +29,15 @@
     </section>
 
     <div id="container" class="container">
-        <section class="invitacion">
+        <section class="invitacion seccion">
             <div class="triangulo"></div>
             <img  class="corona" src="src/img/corona.png" alt="corona">
             <div class="contenido1 fecha">
                 <h1 class="animar1">Mis XV</h1>
-                <img class="mariposa1 animar6" src="src/img/mariposa1.webp" alt="Mariposa">
+                <img class="mariposa1 animar6" src="src/img/mariposa1.gif" alt="Mariposa">
                 <h2 class="animacion2 nombre-xv">Fatima Guadalupe Barrera Jimenez</h2>
-                <h2 class="fecha-txt animar4">01-Abril-2024</h2>
-                <img class="mariposa2 animar3" src="src/img/mariposa2.webp" alt="Mariposa">
+                <h2 class="fecha-txt animar4">18-Abril-2024</h2>
+                <img class="mariposa2 animar3" src="src/img/mariposa2.gif" alt="Mariposa">
             </div>
             <hr>
             <div class="contenido2">
@@ -47,7 +47,7 @@
             </div>
      
         </section>
-        <section class="padrinos-padres">
+        <section class="padrinos-padres seccion">
             <section class="box animar1">
                 <div class="contenido1 animar5">
                     
@@ -72,7 +72,7 @@
            
             
         </section>
-        <section class="contador-galeria">
+        <section class="contador-galeria seccion">
             <div class="contenido1 animar5">
                 <section class="container-cont">
                 
@@ -121,7 +121,7 @@
         </section>
           
         
-        <section class="iglesia">
+        <section class="iglesia seccion">
             <div class="franja"></div>
             <div class="contenido1">
                 <img class="img-fondo animar1" src="src/img/iglesia.jpg" alt="">
@@ -129,11 +129,12 @@
             <div class="contenido2 dir">
                
                 <h2 class="animar4"><span class="material-symbols-outlined">church</span>Ceremonia Religiosa</h2>
-                <h3>Parroquia Nuestra Señora de Fátima</h3>
-                <p class="direccion animar4"> Lagos de Moreno 211, Fatima, 20130 Aguascalientes, Ags.</p>
+                <h3 class="animar4">Parroquia Nuestra Señora de Fátima</h3>
+                <h2 class="animar4">18-Abril-2024 a las 13:00</h2>
+                <p class="direccion animar4"> Lagos de Moreno #211, Fatima, 20130 Aguascalientes, Ags.</p>
                 <div class="map animar3" id="map" ></div>
                 <div class="btn-mapa">
-                    <a href="https://www.google/maps.com" class="mapa animar2">Ir a mapa</a>
+                    <a href="https://www.google.com/maps/place/Parroquia+Nuestra+Se%C3%B1ora+de+F%C3%A1tima/@21.9115386,-102.3066559,21z/data=!4m14!1m7!3m6!1s0x8429eefc1d1ba20d:0x6e4fc7dbe641ad43!2sParroquia+Nuestra+Se%C3%B1ora+de+F%C3%A1tima!8m2!3d21.911573!4d-102.306635!16s%2Fg%2F11b6ln3wzb!3m5!1s0x8429eefc1d1ba20d:0x6e4fc7dbe641ad43!8m2!3d21.911573!4d-102.306635!16s%2Fg%2F11b6ln3wzb?hl=es-MX&entry=ttu" class="mapa animar2">Ir a mapa</a>
                 </div>
                
 
@@ -141,7 +142,7 @@
             </div>
            
         </section>
-        <section class="salon">
+        <section class="salon seccion">
             <div class="franja"></div>
             <div class="contenido1">
                 <img class="img-fondo animar3" src="src/img/salon.jpg" alt="">
@@ -152,15 +153,17 @@
                     <span class="material-symbols-outlined">liquor</span>
                     Salon de evento
                 </h2>
-                <p class="direccion animar4">Parroquia Cristo RedentorAv: Siempre Viva, Calles: Falsa #123</p>
+                <h3 class="direccion animar4">Salon Jardín Fatima</h3>
+                <h2 class="animar4">18-Abril-2024 a las 13:00</h2>
+                <p class="direccion animar4"> San Miguel El Alto #508, Fatima, 20130 Aguascalientes, Ags.</p>
                 <div class="map animar1" id="map2" ></div>
                 <div class="btn-mapa">
-                    <a href="https://www.google/maps.com" class="mapa animar2">Ir a mapa</a>
+                    <a href="https://www.google.com/maps/place/Salon+Jardín+Fátima/@21.9091639,-102.3086038,19z/data=!3m1!4b1!4m6!3m5!1s0x8429eefb93f5d2ad:0xccb60b059c5273a3!8m2!3d21.9091639!4d-102.3079601!16s%2Fg%2F1tfb29sh?entry=ttu" class="mapa animar2">Ir a mapa</a>
                 </div>
             </div>
           
         </section>
-        <section class="confirmacion">
+        <section class="confirmacion seccion">
          
             <div class="contenido1">
                 <img class="img-fondo animar5" src="src/img/fatyfondo.jpeg" alt="">
@@ -209,8 +212,41 @@
                 </form>
                     
     </div>
-          
-      
+            </section>
+
+
+        
+        <section class="boletos" id="imprimir-boletos">
+           <h3 class="agradecimiento">Gracias por confirmar tu asistencia, puedes descargar tu boleto en el siguiente boton:</h3>
+                <div class="contbtn" id="botonDescargar">
+                    <a  class="btn-neon" id="confirmarAsistencia">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                    DESCARGAR BOLETO
+                    </a>
+                </div>
+                <div class="margen-boleto">
+                        <div id="boleto" class="container-boleto">
+                        <div class="boleto" id="miDiv">
+                            <div class="contenido-qr">
+                                <span id="cantidad-personas" class="txt-boleto-sup"></span>
+                                <img alt="Código QR" id="codigo" class="qr">
+                                <span id="info-fam" class="txt-boleto-inf"> </span>
+                        </div>
+                    </div>
+                </div>
+            
+  
+                    
+                
+                
+            </div>
+       
+            
+    
+        </section>
     </div>
     <script src="html2canvas.js"></script>
     <script src="script.js"></script>
