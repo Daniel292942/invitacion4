@@ -57,28 +57,33 @@ $finalMessage.style.transform = 'translateY(0)';
 
 
 function iniciarMap() {
-var coord = { lat: -34.603722, lng: -58.381592 };
-var idMap = 'map'; // ID del elemento del mapa en el HTML
-var idMap2 = 'map2';
-var map = new google.maps.Map(document.getElementById(idMap), {
-zoom: 10,
-center: coord
-});
 
-var marker2 = new google.maps.Marker({
-position: coord,
-map: map
-});
-var map2 = new google.maps.Map(document.getElementById(idMap2), {
-zoom: 10,
-center: coord
-});
+  var coord = { lat: 21.911571573067143, lng: -102.30664244416418 };
+  var coord2 = { lat: 21.909161225037312, lng: -102.30796125088494 };
+  var idMap = 'map'; // ID del elemento del mapa en el HTML
+  var idMap2 = 'map2';
 
-var marker = new google.maps.Marker({
-position: coord,
-map: map
-});
+  var map = new google.maps.Map(document.getElementById(idMap), {
+      zoom: 17,
+      center: coord
+  });
+
+  var marker = new google.maps.Marker({
+      position: coord,
+      map: map
+  });
+
+  var map2 = new google.maps.Map(document.getElementById(idMap2), {
+      zoom: 17,
+      center: coord2
+  });
+
+  var marker2 = new google.maps.Marker({
+      position: coord2,
+      map: map2
+  });
 }
+
 
 
 
@@ -165,12 +170,20 @@ const formulario= document.getElementById('formCantidad');
 const cantidad= document.getElementById("cantidad-personas");
 const informacion= document.getElementById("info-fam");
 const btnConfirmar= document.getElementById("confirmarAsistencia");
+const imprimirBoletos= document.getElementById("imprimir-boletos");
 let  cantidadSeleccionada=1;
 //MANEJO DE CHECK
 
 btnConfirmar.addEventListener("click", function() {
     cantidadSeleccionada = document.getElementById("cantidadPersonas").value;
     cantidad.textContent="Boleto para "+cantidadSeleccionada+" personas";
+    if (imprimirBoletos.style.display==="none") {
+      imprimirBoletos.style.display="block";
+      } 
+      imprimirBoletos.style.display="block";
+      irASeccionFinal();
+      
+      
 });
 
 
@@ -184,25 +197,26 @@ informacion.textContent=textoParametro;
 
     // Obtener referencia al checkbox
     var checkbox = document.getElementById('myCheckbox');
-
+    checkbox.checked = true;
     // Agregar un event listener para detectar cambios
     checkbox.addEventListener('change', function() {
       // Verificar si el checkbox está marcado
       if (checkbox.checked) {
         formulario.style.display="block";
-        console.log("activado");
+       
       } else {
         formulario.style.display="none";
+        imprimirBoletos.style.display="none";
       }
 });
 
 
 
 //CODIGO QR
-
+let varQr=cantidadSeleccionada+"boletos"+textoParametro+"id:Sr&2146Psg";
 new QRious({
     element: document.querySelector("#codigo"),
-    value: "Daniel", // La URL o el texto
+    value: `${varQr}`, // La URL o el texto
     size: 200,
     backgroundAlpha: 0, // 0 para fondo transparente
     foreground: "black", // Color del QR
@@ -213,21 +227,45 @@ new QRious({
 
 // Función para convertir el contenido del div en una imagen
 function convertirDivEnImagen() {
-const div = document.getElementById('miDiv');
-html2canvas(div).then(canvas => {
-// Convertir el lienzo en una URL de datos
-const imageData = canvas.toDataURL('image/png');
-// Crear un elemento de enlace para la descarga
-const enlaceDescarga = document.createElement('a');
-enlaceDescarga.href = imageData;
-enlaceDescarga.download = 'imagen_desde_div.png';
-// Simular clic en el enlace de descarga
-enlaceDescarga.click();
-});
+    const div = document.getElementById('boleto');
+
+    // Cambiar escala antes de tomar la captura
+    div.style.transform = 'scale(1)';
+
+    html2canvas(div).then(canvas => {
+        // Convertir el lienzo en una URL de datos
+        const imageData = canvas.toDataURL('image/png');
+
+        // Crear un elemento de enlace para la descarga
+        const enlaceDescarga = document.createElement('a');
+        enlaceDescarga.href = imageData;
+        enlaceDescarga.download = 'imagen_desde_div.png';
+
+        // Simular clic en el enlace de descarga
+        enlaceDescarga.click();
+
+        // Cambiar escala después de tomar la captura
+        div.style.transform = 'scale(0.4)';
+    });
 }
 
 // Manejador de evento para el botón de descarga
 document.getElementById('botonDescargar').addEventListener('click', convertirDivEnImagen);
+
+
+
+
+function irASeccionFinal() {
+  // Obtener la posición de la sección final
+  var seccionFinal = document.getElementById('imprimir-boletos');
+  var posicion = seccionFinal.offsetTop;
+
+  // Desplazarse hacia la posición de inicio de la sección final con animación suave
+  window.scrollTo({
+      top: posicion - 50, // Ajustar para posicionar al inicio de la sección
+      behavior: 'smooth'
+  });
+}
 
 
 
